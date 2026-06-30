@@ -25,6 +25,10 @@ source-repository head
 
 library
   exposed-modules:
+      Types
+      Parser
+      Graph
+      Evaluator
       Lib
   other-modules:
       Paths_project
@@ -35,6 +39,8 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
+    , containers
+    , mtl
   default-language: Haskell2010
 
 executable project-exe
@@ -48,6 +54,7 @@ executable project-exe
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , containers
     , project
   default-language: Haskell2010
 
@@ -63,5 +70,8 @@ test-suite project-test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , containers
+    , hspec
+    , QuickCheck
     , project
   default-language: Haskell2010
